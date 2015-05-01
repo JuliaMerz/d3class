@@ -1,0 +1,9 @@
+html{
+  background-color: #f0f0f0;
+}
+#body {
+  width: 800px;
+  margin: 50 auto;
+  background-color: #ddddf0;
+  padding: 20px;
+}
