@@ -5,6 +5,8 @@
     <script src="static/d3/d3.js"></script>
     <script src="static/jquery/dist/jquery.js"></script>
     <script src="static/stackquery.js"></script>
+    <script src="static/underscore/underscore.js"></script>
+    <meta http-equiv="content-type" content="text/html; charset=UTF8">
   </head>
   <body>
     <div id="body">
@@ -12,7 +14,41 @@
         Top Stackexchange Questions
       </h1>
       <div id="content">
+        <div id="form">
+          <form action="#">
+            <input id="search-text" type="text" name="text">
+            <input id="submit-button" type="submit" name="search">
+          </form>
+        </div>
+        <div id="graph">
+        </div>
+        <div id="table">
+          <table>
+          </table>
+        </div>
       </div>
     </div>
+    <script>
+      $( document ).ready(function() {
+        $('#submit-button').on('click', buttonSubmit);
+      });
+      function buttonSubmit(e){
+        e.preventDefault();
+        stackquery($('#search-text').val(), grapher)
+      }
+
+      function grapher(data){
+        console.log("raw data", data);
+
+
+        //Make the table.
+
+
+        //Graph the top 10!
+        var top = top10(data);
+
+      }
+
+    </script>
   </body>
 </html>
