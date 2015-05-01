@@ -42,6 +42,27 @@
 
 
         //Make the table.
+        var table = d3.select("table");
+        rows = table.selectAll('tr')
+            .data(data.items)
+            .enter()
+            .append('tr')
+            .append('td');
+        console.log(rows);
+        rows.html(function(d, i){
+          var result = '<a href="'+d.link+'">';
+          result += d.title;
+          result += '</a>';
+          result += '<br>';
+          for(var j=0; j<d.tags.length;j++){
+            result += d.tags[j];
+            result += ', ';
+          }
+          result += '<hr>';
+          return result;
+
+        });
+
 
 
         //Graph the top 10!
